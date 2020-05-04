@@ -113,7 +113,7 @@ PROCESS
     If ($Status -notlike 'Running')
     {
 
-        Start-Service -Name $Name -Force
+        Start-Service -Name $Name
 
     }  # End If
     Else
@@ -121,7 +121,7 @@ PROCESS
 
         Write-Output "$Name is already running. Restarting service $Name."
 
-        Restart-Service -Name $Name -Force
+        Restart-Service -Name $Name
 
     }  # End Else
 
