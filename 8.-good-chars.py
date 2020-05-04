@@ -4,6 +4,7 @@
 # BAD CHARS: 0x00,0x0a,0x0d,0x25,0x26,0x2b,0x3d
 #
 # Now find a way to redirect the execution flow to the shellcode located at the memory address the ESP register is pointing to at the time of the crash.
+# One such method is too search for a jmp esp instruction
 import socket
 import sys
 
