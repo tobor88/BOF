@@ -15,6 +15,10 @@
 #
 # Use that value to perform a search in mona
 # !mona find -s "\xFF\xE4" -m libspp.dll"
+# RESULT 0x10090c83
+# The returned result can not contain any of the bad characters. In IDA click "Go to Address" and enter the value 0x10090c83. This should take you to the jmp esp instruction
+# Set a breakpoint at this instruction by pressing F2 wih it selected
+# 
 import socket
 import sys
 
