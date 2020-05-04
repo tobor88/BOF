@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #
 # Find the bad characters
+# Follow ESP register in dump to find the bad chars
 #
 import socket
 import sys
